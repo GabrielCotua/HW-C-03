@@ -140,23 +140,19 @@ expected output:
 
 [Numerical Value] (only takes one digit)
 
-|#####################|
-|HW #03, Gabriel Cotua|
-|#####################|
-
-[Console] Insert a character: 3
+[Console] Insert a character: 4
 
 [Debug] The if-else code segment is being executed.
-[Console] Printing Chr1: 3
+[Console] Printing Chr1: 4
 [Debug] is a number if-statement executed successfully
-[Console] printing chr1 as char: 8
-[Console] printing chr1 as integer: 56
+[Console] printing chr1 as char: 9
+[Console] printing chr1 as integer: 57
 
 [Debug] The switch-case segment is being executed.
-[Console] Printing chr2: 3
-[Debug] is upper case-statement executed successfully
-[Console] printing chr2 as char: 3
-[Console] printing chr2 as integer: 51
+[Console] Printing chr2: 4
+[Debug] is a number case-statement executed successfully
+[Console] printing chr2 as char: 9
+[Console] printing chr2 as integer: 57
 
 |--------------->
 
