@@ -92,3 +92,84 @@ int main(void)
     }
     return 0;
 }
+/*
+expected output:
+
+[Capital Letter]
+
+|#####################|
+|HW #03, Gabriel Cotua|
+|#####################|
+
+[Console] Insert a character: S 
+
+[Debug] The if-else code segment is being executed.
+[Console] Printing Chr1: S
+[Debug] is upper if-statement executed successfully
+[Console] printing chr1 as char: s
+[Console] printing chr1 as integer: 115
+
+[Debug] The switch-case segment is being executed.
+[Console] Printing chr2: S
+[Debug] is upper case-statement executed successfully
+[Console] printing chr2 as char: s
+[Console] printing chr2 as integer: 115
+
+|--------------->
+
+[Lowercase Letter]
+
+|#####################|
+|HW #03, Gabriel Cotua|
+|#####################|
+
+[Console] Insert a character: s
+
+[Debug] The if-else code segment is being executed.
+[Console] Printing Chr1: s
+[Debug] is lower if-statement executed successfully
+[Console] printing chr1 as char: S
+[Console] printing chr1 as integer: 83
+
+[Debug] The switch-case segment is being executed.
+[Console] Printing chr2: s
+[Debug] is lower case-statement executed successfully
+[Console] printing chr2 as char: S
+[Console] printing chr2 as integer: 83
+
+|--------------->
+
+[Numerical Value] (only takes one digit)
+
+|#####################|
+|HW #03, Gabriel Cotua|
+|#####################|
+
+[Console] Insert a character: 3
+
+[Debug] The if-else code segment is being executed.
+[Console] Printing Chr1: 3
+[Debug] is a number if-statement executed successfully
+[Console] printing chr1 as char: 8
+[Console] printing chr1 as integer: 56
+
+[Debug] The switch-case segment is being executed.
+[Console] Printing chr2: 3
+[Debug] is upper case-statement executed successfully
+[Console] printing chr2 as char: 3
+[Console] printing chr2 as integer: 51
+
+|--------------->
+
+[Else]
+
+|#####################|
+|HW #03, Gabriel Cotua|
+|#####################|
+
+[Console] Insert a character: #
+
+[Debug] The if-else code segment is being executed.
+[Debug] the input is invalid ['a', 'A', non-digit, non-alphabetic]
+
+*/
