@@ -23,24 +23,25 @@ int main(void)
     // part 2
     // [a]
     printf("\n" DEBUG " The if-else code segment is being executed.\n");
-    if (!(chr1 == 'a' || chr1 == 'A') && (isdigit(chr1) || isalpha(chr1))) //
+
+    if (!(chr1 == 'a' || chr1 == 'A') && (isdigit(chr1) || isalpha(chr1))) // only allows characters or numbers to pass
     {
         // [b]
         printf(CONSOLE " Printing Chr1: %c\n", chr1);
 
         // [c]
         if (islower(chr1) && chr1 != 'a')
-        { // [c.1]
+        {   // [c.1]
             chr1 = toupper(chr1);
             printf(DEBUG " is lower if-statement executed successfully\n");
         }
         else if (isupper(chr1) && chr1 != 'A')
-        { // [c.2]
+        {   // [c.2]
             chr1 = tolower(chr1);
             printf(DEBUG " is upper if-statement executed successfully\n");
         }
         else
-        { // [c.3]
+        {   // [c.3]
             chr1 = chr1 + 5;
             printf(DEBUG " is a number if-statement executed successfully\n");
             // printf( DEBUG " The number is: %d\n", chr1); // another sanity check
@@ -56,30 +57,28 @@ int main(void)
         // [b]
         printf(CONSOLE " Printing chr2: %c\n", chr2);
         // [c]
-        switch (islower(chr2) ? 1 : 0)
+        switch (islower(chr2) ? 1 : 0) // checks if the character is lower case
         {
-        case 1:
+        case 1: // if true
             // [c.1]
-
             chr2 = toupper(chr2);
             printf(DEBUG " is lower case-statement executed successfully\n");
             break;
 
-            // Add break here to prevent fall-through
-        case 0:
+        case 0: //if false
             // [c.2]
-
+            if(!isdigit(chr2))
+            {
             chr2 = tolower(chr2);
             printf(DEBUG " is upper case-statement executed successfully\n");
             break;
-
+            }
         default:
             // [c.3]
             if (isdigit(chr2))
             {
                 chr2 = chr2 + 5;
                 printf(DEBUG " is a number case-statement executed successfully\n");
-                break;
             }
             break;
         }
