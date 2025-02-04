@@ -23,76 +23,72 @@ int main(void)
     // part 2
     // [a]
     printf("\n" DEBUG " The if-else code segment is being executed.\n");
-    // [b]
-    printf(CONSOLE " Printing Chr1: %c\n", chr1);
-
-    // [c]
-    if (islower(chr1) && chr1 != 'a')
-    { // [c.1]
-        chr1 = toupper(chr1);
-        printf(DEBUG " is lower if-statement executed successfully\n");
-    }
-    else if (isupper(chr1) && chr1 != 'A')
-    { // [c.2]
-        chr1 = tolower(chr1);
-        printf(DEBUG " is upper if-statement executed successfully\n");
-    }
-    else if (isdigit(chr1))
-    { // [c.3]
-        chr1 = chr1 + 5;
-        printf(DEBUG " is a number if-statement executed successfully\n");
-        // printf( DEBUG " The number is: %d\n", chr1); // another sanity check
-    }
-    else
+    if (!(chr1 == 'a' || chr1 == 'A') && (isdigit(chr1) || isalpha(chr1))) //
     {
-        printf(DEBUG " The character is an \'a\' or \'A\' and is not a letter or a number\n");
-    }
-    // [d]
-    printf(CONSOLE " printing chr1 as char: %c\n" CONSOLE " printing chr1 as integer: %d\n\n", chr1, chr1);
+        // [b]
+        printf(CONSOLE " Printing Chr1: %c\n", chr1);
 
-    //  printf("is number: %s\n", (isdigit(chr1)) ? "true" : "false"); //another sanity check
+        // [c]
+        if (islower(chr1) && chr1 != 'a')
+        { // [c.1]
+            chr1 = toupper(chr1);
+            printf(DEBUG " is lower if-statement executed successfully\n");
+        }
+        else if (isupper(chr1) && chr1 != 'A')
+        { // [c.2]
+            chr1 = tolower(chr1);
+            printf(DEBUG " is upper if-statement executed successfully\n");
+        }
+        else
+        { // [c.3]
+            chr1 = chr1 + 5;
+            printf(DEBUG " is a number if-statement executed successfully\n");
+            // printf( DEBUG " The number is: %d\n", chr1); // another sanity check
+        }
+        // [d]
+        printf(CONSOLE " printing chr1 as char: %c\n" CONSOLE " printing chr1 as integer: %d\n\n", chr1, chr1);
 
-    // part 3
-    //  [a]
-    printf(DEBUG " The switch-case segment is being executed.\n");
-    // [b]
-    printf(CONSOLE " Printing chr2: %c\n", chr2);
-    // [c]
-    switch (islower(chr2) ? 1 : 0)
-    {
-    case 1:
-        // [c.1]
-        if (chr2 != 'a' && !isdigit(chr2))
+        //  printf("is number: %s\n", (isdigit(chr1)) ? "true" : "false"); //another sanity check
+
+        // part 3
+        //  [a]
+        printf(DEBUG " The switch-case segment is being executed.\n");
+        // [b]
+        printf(CONSOLE " Printing chr2: %c\n", chr2);
+        // [c]
+        switch (islower(chr2) ? 1 : 0)
         {
+        case 1:
+            // [c.1]
+
             chr2 = toupper(chr2);
             printf(DEBUG " is lower case-statement executed successfully\n");
-        }
-        break; // Add break here to prevent fall-through
-    case 0:
-        // [c.2]
-        if (chr2 != 'A' && !isdigit(chr2))
-        {
+            break;
+
+            // Add break here to prevent fall-through
+        case 0:
+            // [c.2]
+
             chr2 = tolower(chr2);
             printf(DEBUG " is upper case-statement executed successfully\n");
             break;
+
+        default:
+            // [c.3]
+            if (isdigit(chr2))
+            {
+                chr2 = chr2 + 5;
+                printf(DEBUG " is a number case-statement executed successfully\n");
+                break;
+            }
+            break;
         }
 
-    default:
-        // [c.3]
-        if (isdigit(chr2))
-        {
-            chr2 = chr2 + 5;
-            printf(DEBUG " is a number case-statement executed successfully\n");
-            break;
-        }
-        else
-        {
-            printf(DEBUG " The character is an \'a\' or \'A\' and is not a letter or a number\n");
-            break;
-        }
+        printf(CONSOLE " printing chr2 as char: %c\n" CONSOLE " printing chr2 as integer: %d\n\n", chr2, chr2);
     }
-
-    printf(CONSOLE " printing chr2 as char: %c\n" CONSOLE " printing chr2 as integer: %d\n\n", chr2, chr2);
-
+    else
+    {
+        printf(DEBUG " the input is invalid ['a', 'A', non-digit, non-alphabetic]\n");
+    }
     return 0;
 }
